@@ -101,7 +101,7 @@ public:
 
 int main(int argc, char const *argv[])
 {
-	//char st[]="We are Happy";
+	char st[]="We are Happy";
 	int len=100;
 	Solution s1;
 	s1.replaceSpace(st,len);

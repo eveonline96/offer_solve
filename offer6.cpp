@@ -88,3 +88,54 @@ int main(int argc, char const *argv[])
 	 cout<<result<<endl;
 	return 0;
 }
+
+//以下方法思路更简单
+
+// class Solution
+// {
+// public:
+//     int minNumberInRotateArray(vector<int> arr)
+//     {
+//         int arr_len=arr.size();
+//         if (arr_len==0)
+//         {
+//             return 0;
+//         }
+//         int left=0;
+//         int right=arr_len-1;
+//         int mid=0;
+//         while(arr[left]>=arr[right])
+//         {
+//             if(right-left==1)
+//             {
+//                 mid=right;
+//                 break;
+//             }
+//             mid=left+(right-left)/2;
+//             if (arr[mid]>=arr[left])
+//             {
+//                 left=mid;
+//             }
+//             if (arr[mid]<=arr[right])
+//             {
+//                 right=mid;
+//             }
+//         }
+//         return arr[mid];
+//     }
+// };
+
+// int main(int argc, char const *argv[])
+// {
+//     Solution s1;
+//     vector<int> v1;
+//     v1.push_back(3);
+//     v1.push_back(4);
+//     v1.push_back(5);
+//     v1.push_back(6);
+//     v1.push_back(1);
+//     v1.push_back(2);
+//     int result=s1.minNumberInRotateArray(v1);
+//     cout<<result<<endl;
+//     return 0;
+// }
