@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include <iostream>
 #include <vector>
 #include <math.h>
@@ -80,6 +82,7 @@ public:
         }
         new_node->val=-100;
         new_node->next=NULL;
+        
         Merge_head=new_node;
         while(list1_head&&list2_head)
         {
