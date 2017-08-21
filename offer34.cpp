@@ -14,11 +14,25 @@ class Solution
 public:
     int FirstNotRepeatingChar(string str)
      {
-        
+     	
+     	int str_len=str.size();
+     	if(str_len==0)
+     		return -1;
+     	char ch[256]={0};
+     	for(int i=0;i<str_len;i++)
+     		ch[str[i]]++;
+     	for(int i=0;i<str_len;i++)
+     		if(ch[str[i]]==1)
+     			return i;
+     	return 0;
     }
 };
 int main(int argc, char const *argv[])
 {
-	
+	Solution s1;
+	string str="ababcacbdcdfffresefsdfsdfsddfsds";
+	int res=s1.FirstNotRepeatingChar(str);
+	cout<<res<<endl;
+	cout<<str[res]<<endl;
 	return 0;
 }
