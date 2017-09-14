@@ -16,7 +16,8 @@ a b c e s f c s a d e e 矩阵中包含一条字符串"bcced"的路径，
 但是矩阵中不包含"abcb"路径，
 因为字符串的第一个字符b占据了矩阵中的第一行第二个格子之后，
 路径不能再次进入该格子。
-*/
+
+
 分析：回溯算法
  这是一个可以用回朔法解决的典型题。首先，在矩阵中任选一个格子作为路径的起点。如果路径上的第i个字符不是ch，那么这个格子不可能处在路径上的
 第i个位置。如果路径上的第i个字符正好是ch，那么往相邻的格子寻找路径上的第i+1个字符。除在矩阵边界上的格子之外，其他格子都有4个相邻的格子。
@@ -27,7 +28,10 @@ a b c e s f c s a d e e 矩阵中包含一条字符串"bcced"的路径，
 格子和路径字符串中相应的字符一样时，从4个相邻的格子(row,col-1),(row-1,col),(row,col+1)以及(row+1,col)中去定位路径字符串中下一个字符
 如果4个相邻的格子都没有匹配字符串中下一个的字符，表明当前路径字符串中字符在矩阵中的定位不正确，我们需要回到前一个，然后重新定位。
 　　一直重复这个过程，直到路径字符串上所有字符都在矩阵中找到合适的位置
-class Solution {
+*/
+
+class Solution 
+{
 public:
     bool hasPath(char* matrix, int rows, int cols, char* str)
     {  
@@ -46,17 +50,7 @@ public:
 	{
 	  if(*str=='\0')
 	       return true;
-	  if(cury==cols)
-	  {
-	       curx++;
-	       cury=0;
-	  }
-	  if(cury==-1)
-	  {
-	       curx--;
-	       cury=cols-1;
-	  }
-	  if(curx<0||curx>=rows)
+	  if(curx<0||curx>=rows||cury<0||cury>=cols)
 	       return false;
 	  if(isOk[curx*cols+cury]||*str!=matrix[curx*cols+cury])
 	       return false;

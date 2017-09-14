@@ -21,8 +21,6 @@ using namespace std;
 2）当前节点未被访问过；
 3）当前节点满足limit限制。
 3.
-运行时间：31ms
-占用内存：550k
 */
 
 
@@ -59,45 +57,6 @@ public:
               
         }
         return sum;
-    }
-};
-
-
-    
-public:
-    int movingCount(int threshold, int rows, int cols)
-    {
-        int cnt=0;
-        int a,b,c,d;
-        int count1=0,count2=0;
-        for (int i = 0; i < cols; ++i)
-        {
-        	for (int j = 0; j < rows; ++j)
-        	{
-        		int count1=0,count2=0;
-        		//cout<<"123"<<endl;
-        		int c=i;
-        		int r=j;
-        		while(c!=0)
-        		{
-        			b=c%10;
-        			count1+=b;
-        			c=c/10;
-        		}
-        		while(r!=0)
-        		{
-        			b=r%10;
-        			count2+=b;
-        			r=r/10;
-        		}
-        		if (count1+count2>threshold)
-        		{
-        			continue;
-        		}
-        		cnt++;
-        	}
-        }
-        return cnt;
     }
 };
 int main(int argc, char const *argv[])
